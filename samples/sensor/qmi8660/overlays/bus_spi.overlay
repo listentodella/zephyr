@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2026 QST.Corp
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+&arduino_spi {
+	/*
+	 * Common QMI8660 node:
+	 * keep board-independent sensor parameters here.
+	 */
+	imu_dev: qmi8660@0 {
+		reg = <0>;
+		compatible = "qst,qmi8660";
+		friendly-name = "imu_mainboard";
+		spi-max-frequency = <DT_FREQ_M(12)>;
+		accel-fs = <16>;
+		gyro-fs = <2048>;
+		accel-odr-hz = <50>;
+		gyro-odr-hz = <50>;
+		int-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
+		int-pin = <1>;
+	};
+};

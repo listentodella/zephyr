@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2026 QST.Corp
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+&arduino_i2c {
+	imu_dev: qmi8660@6a {
+		compatible = "qst,qmi8660";
+		reg = <0x6a>;
+		friendly-name = "imu_mainboard_i2c";
+		accel-fs = <16>;
+		gyro-fs = <2048>;
+		accel-odr-hz = <50>;
+		gyro-odr-hz = <50>;
+		int-gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
+		int-pin = <1>;
+	};
+};

@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2026 QST.Corp
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/ {
+	aliases {
+		led3r = &led3_red;
+		led3g = &led3_green;
+		led3b = &led3_blue;
+		led4r = &led4_red;
+		led4g = &led4_green;
+		led4b = &led4_blue;
+		imu = &imu_dev;
+		stream0 = &imu_dev; /* for rtio */
+	};
+};

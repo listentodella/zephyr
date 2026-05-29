@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2026 QST.Corp
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include "../app.overlay"
+
+&arduino_spi {
+	dmas = <&gpdma1 0 9 (STM32_DMA_PERIPH_TX | STM32_DMA_PRIORITY_HIGH)>,
+	       <&gpdma1 1 8 (STM32_DMA_PERIPH_RX | STM32_DMA_PRIORITY_HIGH)>;
+	dma-names = "tx", "rx";
+	pinctrl-0 = <&spi2_sck_pb13 &spi2_miso_pb14 &spi2_mosi_pb15>;
+	/* soft CS is recommended for this DMA + RTIO scenario */
+	cs-gpios = <&gpiob 9 GPIO_ACTIVE_LOW>;
+};
+
+&arduino_i2c {
+	dmas = <&gpdma1 0 16 (STM32_DMA_PERIPH_TX | STM32_DMA_PRIORITY_HIGH)>,
+	       <&gpdma1 1 15 (STM32_DMA_PERIPH_RX | STM32_DMA_PRIORITY_HIGH)>;
+	dma-names = "tx", "rx";
+};
