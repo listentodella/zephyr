@@ -2,3 +2,4 @@
 # SPDX-License-Identifier: Apache-2.0
 
 source "drivers/sensor/qst/qmi8658a/Kconfig"
+source "drivers/sensor/qst/qmi8660/Kconfig"

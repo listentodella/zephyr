@@ -1,0 +1,7 @@
+description: |
+  QST QMI8660 6-axis IMU (Inertial Measurement Unit) sensor
+  accessed through I2C bus
+
+compatible: "qst,qmi8660"
+
+include: ["i2c-device.yaml", "qst,qmi8660.yaml"]

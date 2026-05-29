@@ -1,0 +1,7 @@
+description: |
+  QST QMI8660 6-axis IMU (Inertial Measurement Unit) sensor
+  accessed through SPI bus
+
+compatible: "qst,qmi8660"
+
+include: ["spi-device.yaml", "qst,qmi8660.yaml"]
